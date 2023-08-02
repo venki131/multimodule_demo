@@ -1,11 +1,15 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
+    kotlin("kapt")
+    id("com.google.dagger.hilt.android")
+    id ("dagger.hilt.android.plugin")
+    id ("kotlin-parcelize")
 }
 
 android {
     namespace = "com.example.home"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         minSdk = 24
@@ -29,6 +33,14 @@ android {
     }
     kotlinOptions {
         jvmTarget = "1.8"
+    }
+    kotlin {
+        jvmToolchain(8)
+    }
+    java {
+        toolchain {
+            languageVersion.set(JavaLanguageVersion.of(8))
+        }
     }
     buildFeatures {
         compose = true
@@ -57,8 +69,14 @@ dependencies {
     implementation("androidx.compose.material3:material3")
     implementation("androidx.navigation:navigation-compose:2.6.0")
     implementation("androidx.lifecycle:lifecycle-runtime-compose:2.7.0-alpha01")
+    implementation("com.google.dagger:hilt-android:2.44")
+    kapt("com.google.dagger:hilt-android-compiler:2.44")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
+}
+
+hilt {
+    enableAggregatingTask = true
 }
