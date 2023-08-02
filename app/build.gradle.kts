@@ -1,18 +1,20 @@
 plugins {
     id("com.android.application")
     kotlin("android")
-    /*kotlin("kapt")
-    id("com.google.dagger.hilt.android")*/
+    kotlin("kapt")
+    id("com.google.dagger.hilt.android")
+    id ("dagger.hilt.android.plugin")
+    id ("kotlin-parcelize")
 }
 
 android {
     namespace = "com.example.sampleapp"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.example.sampleapp"
         minSdk = 24
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
@@ -37,6 +39,14 @@ android {
     }
     kotlinOptions {
         jvmTarget = "1.8"
+    }
+    kotlin {
+        jvmToolchain(8)
+    }
+    java {
+        toolchain {
+            languageVersion.set(JavaLanguageVersion.of(8))
+        }
     }
     buildFeatures {
         compose = true
@@ -69,9 +79,8 @@ dependencies {
     implementation("androidx.compose.ui:ui-tooling-preview")
     implementation("androidx.compose.material3:material3")
     implementation("androidx.navigation:navigation-compose:2.6.0")
-    /*implementation ("com.google.dagger:hilt-android:2.42")
-    kapt ("com.google.dagger:hilt-android-compiler:2.42")
-    kapt ("androidx.hilt:hilt-compiler:1.0.0")*/
+    implementation("com.google.dagger:hilt-android:2.44")
+    kapt("com.google.dagger:hilt-android-compiler:2.44")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
@@ -79,4 +88,8 @@ dependencies {
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
+}
+
+hilt {
+    enableAggregatingTask = true
 }
