@@ -1,8 +1,9 @@
 package com.example.network
 
 import retrofit2.http.GET
+import user_info.NetworkUser
 
 interface ApiService {
     @GET("users")
-    suspend fun getUsers(): List<String>
+    suspend fun getUsers(): List<NetworkUser>
 }

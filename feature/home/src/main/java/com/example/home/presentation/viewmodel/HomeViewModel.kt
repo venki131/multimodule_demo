@@ -6,8 +6,11 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.home.domain.entity.User
 import com.example.home.domain.usecase.GetUserUseCase
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
+//@HiltViewModel
 class HomeViewModel /*@Inject*/ constructor(
     private val getUserUseCase: GetUserUseCase
 ) : ViewModel() {
