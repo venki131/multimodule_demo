@@ -9,6 +9,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
+import com.example.home.presentation.viewmodel.HomeViewModel
 import com.example.navigation.BottomNavigationBar
 import com.example.navigation.BottomNavItem
 import com.example.navigation.addMainGraph
@@ -18,7 +19,8 @@ import com.example.sampleapp.ui.theme.SampleAppTheme
 @Composable
 fun AppNavigation(
     navController: NavHostController = rememberNavController(),
-    appTheme: @Composable() ((Modifier) -> Unit?)?
+    appTheme: @Composable() ((Modifier) -> Unit?)?,
+    homeViewModel: HomeViewModel? = null
 ) {
     SampleAppTheme {
         Scaffold(
@@ -31,7 +33,7 @@ fun AppNavigation(
                 startDestination = BottomNavItem.Home.route,
                 modifier = Modifier.padding(innerPadding)
             ) {
-                addMainGraph(navController)
+                addMainGraph(navController, homeViewModel)
             }
         }
     }
