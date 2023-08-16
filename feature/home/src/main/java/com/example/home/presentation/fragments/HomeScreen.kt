@@ -13,8 +13,8 @@ import androidx.compose.ui.unit.dp
 import com.example.home.domain.entity.User
 import com.example.home.presentation.state.HomeUiState
 
-/*import com.example.ui.ErrorSnackBar
-import com.example.ui.Loading*/
+import com.example.ui.ErrorSnackBar
+import com.example.ui.Loading
 
 @Composable
 fun HomeScreen(
@@ -22,13 +22,9 @@ fun HomeScreen(
     modifier: Modifier = Modifier
 ) {
     when (state) {
-        is HomeUiState.Loading -> {
-
-        }//Loading(modifier)
+        is HomeUiState.Loading -> Loading(modifier)
         is HomeUiState.Success -> UserCard(users = state.data)
-        is HomeUiState.Failure -> {
-
-        }//ErrorSnackBar(modifier, message = "Dummy Error Message"/*state.message*/)
+        is HomeUiState.Failure -> ErrorSnackBar(modifier, message = "Dummy Error Message"/*state.message*/)
     }
 }
 
