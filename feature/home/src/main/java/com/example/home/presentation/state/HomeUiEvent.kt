@@ -2,13 +2,13 @@ package com.example.home.presentation.state
 
 import com.example.home.domain.entity.User
 
-sealed interface HomeUiState {
-    data class Loading(val loadingStatus: Boolean) : HomeUiState
+sealed interface HomeUiEvent {
+    data class Loading(val loadingStatus: Boolean) : HomeUiEvent
     data class Success(
         val data: List<User>? = emptyList()
-    ) : HomeUiState
+    ) : HomeUiEvent
 
-    data class Failure(val message: String?) : HomeUiState
+    data class Failure(val message: String?) : HomeUiEvent
 }
 
 sealed class Resource<T>(

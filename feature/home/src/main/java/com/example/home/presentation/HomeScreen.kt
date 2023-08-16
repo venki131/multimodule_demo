@@ -1,4 +1,4 @@
-package com.example.home.presentation.fragments
+package com.example.home.presentation
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -11,20 +11,20 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.example.home.domain.entity.User
-import com.example.home.presentation.state.HomeUiState
+import com.example.home.presentation.state.HomeUiEvent
 
 import com.example.ui.ErrorSnackBar
 import com.example.ui.Loading
 
 @Composable
 fun HomeScreen(
-    state: HomeUiState,
+    state: HomeUiEvent,
     modifier: Modifier = Modifier
 ) {
     when (state) {
-        is HomeUiState.Loading -> Loading(modifier)
-        is HomeUiState.Success -> UserCard(users = state.data)
-        is HomeUiState.Failure -> ErrorSnackBar(modifier, message = "Dummy Error Message"/*state.message*/)
+        is HomeUiEvent.Loading -> Loading(modifier)
+        is HomeUiEvent.Success -> UserCard(users = state.data)
+        is HomeUiEvent.Failure -> ErrorSnackBar(modifier, message = "Dummy Error Message"/*state.message*/)
     }
 }
 
