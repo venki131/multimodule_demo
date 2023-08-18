@@ -14,7 +14,7 @@ import com.example.home.presentation.viewmodel.HomeViewModel
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeRoute(viewModel: HomeViewModel) {
-    val state by viewModel.state.collectAsState()
+    val state by viewModel.uiState.collectAsState()
     state?.let {
         HomeScreen(it, modifier = Modifier.padding(16.dp))
     }
