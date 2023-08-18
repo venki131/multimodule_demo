@@ -1,4 +1,4 @@
-package com.example.home
+package com.example.di
 
 import org.junit.Test
 

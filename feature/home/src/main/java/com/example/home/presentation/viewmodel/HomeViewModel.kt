@@ -17,14 +17,14 @@ class HomeViewModel @Inject constructor(
     private val getUserUseCase: GetUserUseCase,
 ) : ViewModel() {
 
-    private val _state: MutableStateFlow<HomeUiEvent?> = MutableStateFlow(null)
-    val state: StateFlow<HomeUiEvent?> = _state
+    private val _uiState: MutableStateFlow<HomeUiEvent?> = MutableStateFlow(null)
+    val uiState: StateFlow<HomeUiEvent?> = _uiState
 
     init {
         fetchUsers()
     }
 
-    private fun fetchUsers() {
+    fun fetchUsers() {
         viewModelScope.launch {
             when (val result = getUserUseCase.invoke()) {
                 is Resource.Loading -> {
@@ -39,7 +39,7 @@ class HomeViewModel @Inject constructor(
                     HomeUiEvent.Failure(result.message)
                 }
             }.also {
-                _state.value = it
+                _uiState.value = it
             }
         }
     }
