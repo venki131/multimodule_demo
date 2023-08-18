@@ -37,8 +37,6 @@ _
 /core/ui/src/main/java/com/example/ui/Loading.kt,a/f/afc2a122b3159c838725fa43b65f2541f3b97044
 T
 $core/ui/src/main/AndroidManifest.xml,2/0/20dc05f8d5447c0dd2396ce7594375ac150a2e12
-B
-core/ui/.gitignore,b/9/b9568a2c30080c53618a346626f62fdc3e313b48
 e
 5core/ui/src/main/java/com/example/ui/ErrorSnackBar.kt,1/6/164af042973260b1fd9b649cd970ca630a367ebc
 g

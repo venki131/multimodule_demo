@@ -29,8 +29,6 @@ P
  app/src/main/AndroidManifest.xml,8/c/8c55c3ccc257e5907959013f99656e4c8ec3903e
 K
 navigation/build.gradle.kts,7/2/72a63bd429fe806a7ac06bbbb579bf88f04b3e2b
-B
-core/ui/.gitignore,b/9/b9568a2c30080c53618a346626f62fdc3e313b48
 T
 $core/ui/src/main/AndroidManifest.xml,2/0/20dc05f8d5447c0dd2396ce7594375ac150a2e12
 e
