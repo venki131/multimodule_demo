@@ -1,7 +1,7 @@
 package com.example.network
 
-import retrofit2.http.GET
 import com.example.network.user_info.NetworkUser
+import retrofit2.http.GET
 
 interface ApiService {
     @GET("users")

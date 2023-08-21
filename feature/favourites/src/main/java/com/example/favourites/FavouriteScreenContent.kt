@@ -26,7 +26,7 @@ fun FavouriteRoute(user: User? = null) {
         user?.let { 
             Text(text = user.name + "\n" + user.email)
         } ?: run { 
-            Text(text = "Favourites is Empty")
+            Text(text = "Favourites Screen")
         }
     }
 }

@@ -4,9 +4,9 @@ package com.example.home.presentation.viewmodel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.data.Resource
 import com.example.home.domain.usecase.GetUserUseCase
 import com.example.home.presentation.state.HomeUiEvent
-import com.example.home.presentation.state.Resource
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
@@ -26,20 +26,14 @@ class HomeViewModel @Inject constructor(
 
     fun fetchUsers() {
         viewModelScope.launch {
-            when (val result = getUserUseCase.invoke()) {
-                is Resource.Loading -> {
-                    HomeUiEvent.Loading(result.loadingStatus)
-                }
+            _uiState.value = HomeUiEvent.Loading(true) // Emit loading state
 
-                is Resource.Success -> {
-                    HomeUiEvent.Success(result.data)
-                }
+            val result = getUserUseCase.invoke()
 
-                is Resource.Failure -> {
-                    HomeUiEvent.Failure(result.message)
-                }
-            }.also {
-                _uiState.value = it
+            _uiState.value = when (result) {
+                is Resource.Success -> HomeUiEvent.Success(result.data)
+                is Resource.Failure -> HomeUiEvent.Failure(result.message)
+                else -> HomeUiEvent.Loading(false) // Hide loading state if not success or failure
             }
         }
     }

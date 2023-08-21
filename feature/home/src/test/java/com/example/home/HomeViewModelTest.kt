@@ -1,9 +1,8 @@
 package com.example.home
 
-import com.example.data.User
+import com.example.data.Resource
 import com.example.home.domain.usecase.GetUserUseCase
 import com.example.home.presentation.state.HomeUiEvent
-import com.example.home.presentation.state.Resource
 import com.example.home.presentation.viewmodel.HomeViewModel
 import junit.framework.TestCase.assertEquals
 import kotlinx.coroutines.Dispatchers
@@ -84,9 +83,9 @@ class HomeViewModelTest {
         job.cancelAndJoin()
 
         // Then
-        assertEquals(2, uiStateObserver.size)
+        assertEquals(3, uiStateObserver.size)
 
-        val successEvent = uiStateObserver[1] as HomeUiEvent
+        val successEvent = uiStateObserver[2] as HomeUiEvent
         assertEquals(HomeUiEvent.Success(mockUserList), successEvent)
     }
 
@@ -118,7 +117,7 @@ class HomeViewModelTest {
         job.cancelAndJoin()
 
         // Then
-        assertEquals(2, uiStateObserver.size)
+        assertEquals(3, uiStateObserver.size)
 
         val loadingEvent = uiStateObserver[1] as HomeUiEvent
         assertEquals(HomeUiEvent.Loading(true), loadingEvent)
@@ -145,9 +144,9 @@ class HomeViewModelTest {
         job.cancelAndJoin()
 
         //Then
-        assertEquals(2, uiStateObserver.size)
+        assertEquals(3, uiStateObserver.size)
 
-        val errorEvent = uiStateObserver[1] as HomeUiEvent
+        val errorEvent = uiStateObserver[2] as HomeUiEvent
         assertEquals(HomeUiEvent.Failure(errorMessage), errorEvent)
     }
 }

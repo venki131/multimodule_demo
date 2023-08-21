@@ -1,11 +1,11 @@
 package com.example.home
 
+import com.example.data.Resource
 import com.example.home.data.mapper.UserMapper
 import com.example.home.data.repository.UserRepositoryImpl
-import com.example.data.User
 import com.example.home.domain.repository.UserRepository
-import com.example.home.presentation.state.Resource
 import com.example.network.ApiService
+import com.example.network.user_info.NetworkUser
 import io.mockk.every
 import io.mockk.mockkObject
 import kotlinx.coroutines.Dispatchers
@@ -27,7 +27,6 @@ import org.mockito.MockitoAnnotations
 import org.mockito.junit.MockitoJUnit
 import org.mockito.junit.MockitoJUnitRunner
 import org.mockito.junit.MockitoRule
-import com.example.network.user_info.NetworkUser
 
 @ExperimentalCoroutinesApi
 @RunWith(MockitoJUnitRunner::class)
