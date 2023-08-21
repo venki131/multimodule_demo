@@ -2,7 +2,7 @@ package com.example.home.data.repository
 
 import com.example.di.IoDispatcher
 import com.example.home.data.mapper.UserMapper
-import com.example.home.domain.entity.User
+import com.example.data.User
 import com.example.home.domain.repository.UserRepository
 import com.example.home.presentation.state.Resource
 import com.example.network.ApiService
@@ -14,7 +14,7 @@ class UserRepositoryImpl @Inject constructor(
     private val apiService: ApiService,
     @IoDispatcher private val dispatcher: CoroutineDispatcher
 ) : UserRepository {
-    override suspend fun getUsers(): Resource<List<User>> {
+    override suspend fun getUsers(): Resource<List<com.example.data.User>> {
         return try {
             val networksUsers =
                 withContext(dispatcher) {

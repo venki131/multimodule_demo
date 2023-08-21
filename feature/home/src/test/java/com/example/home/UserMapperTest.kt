@@ -1,10 +1,9 @@
 package com.example.home
 
 import com.example.home.data.mapper.UserMapper
-import com.example.home.domain.entity.User
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
-import user_info.NetworkUser
+import com.example.network.user_info.NetworkUser
 
 class UserMapperTest {
 

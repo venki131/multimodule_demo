@@ -2,7 +2,7 @@ package com.example.home
 
 import com.example.home.data.mapper.UserMapper
 import com.example.home.data.repository.UserRepositoryImpl
-import com.example.home.domain.entity.User
+import com.example.data.User
 import com.example.home.domain.repository.UserRepository
 import com.example.home.presentation.state.Resource
 import com.example.network.ApiService
@@ -27,7 +27,7 @@ import org.mockito.MockitoAnnotations
 import org.mockito.junit.MockitoJUnit
 import org.mockito.junit.MockitoJUnitRunner
 import org.mockito.junit.MockitoRule
-import user_info.NetworkUser
+import com.example.network.user_info.NetworkUser
 
 @ExperimentalCoroutinesApi
 @RunWith(MockitoJUnitRunner::class)
@@ -57,7 +57,7 @@ class UserRepositoryImplTest {
     fun `getUsers Success`() = testScope.runBlockingTest {
         //Given
         val mockNetworkUsers = listOf(NetworkUser(1,"James", "james@yopmail.com"))
-        val mockDomainUser = User(1,"James","james@yopmail.com")
+        val mockDomainUser = com.example.data.User(1, "James", "james@yopmail.com")
 
         `when`(mockApiService.getUsers()).thenReturn(mockNetworkUsers)
 

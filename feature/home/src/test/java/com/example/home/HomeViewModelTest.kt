@@ -1,6 +1,6 @@
 package com.example.home
 
-import com.example.home.domain.entity.User
+import com.example.data.User
 import com.example.home.domain.usecase.GetUserUseCase
 import com.example.home.presentation.state.HomeUiEvent
 import com.example.home.presentation.state.Resource
@@ -61,7 +61,13 @@ class HomeViewModelTest {
     fun `fetchUsers success`() = testDispatcher.runBlockingTest {
         // Given
         val mockUserList =
-            listOf(User(id = 1, name = "James Bond", email = "Jamesbond007@yopmail.com"))
+            listOf(
+                com.example.data.User(
+                    id = 1,
+                    name = "James Bond",
+                    email = "Jamesbond007@yopmail.com"
+                )
+            )
         val successResource = Resource.Success(mockUserList)
         `when`(getUserUseCase.invoke()).thenReturn(successResource)
 
@@ -88,7 +94,13 @@ class HomeViewModelTest {
     fun `fetchUsers Loading`() = testDispatcher.runBlockingTest {
         // Given
         val mockUserList =
-            listOf(User(id = 1, name = "James Bond", email = "Jamesbond007@yopmail.com"))
+            listOf(
+                com.example.data.User(
+                    id = 1,
+                    name = "James Bond",
+                    email = "Jamesbond007@yopmail.com"
+                )
+            )
         val loadingResource = Resource.Loading(true, mockUserList)
         `when`(getUserUseCase.invoke()).thenReturn(loadingResource)
 
@@ -116,7 +128,7 @@ class HomeViewModelTest {
     fun `fetchUsers throws Error`() = testDispatcher.runBlockingTest {
         // Given
         val errorMessage = "Sample error message"
-        val failureResource = Resource.Failure<List<User>>(errorMessage)
+        val failureResource = Resource.Failure<List<com.example.data.User>>(errorMessage)
         `when`(getUserUseCase.invoke()).thenReturn(failureResource)
 
         val uiStateObserver: MutableList<HomeUiEvent?> = mutableListOf()
