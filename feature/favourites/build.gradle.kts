@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.example.favourites"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         minSdk = 24
@@ -46,6 +46,7 @@ android {
 dependencies {
 
     implementation(project(":network"))
+    implementation(project(":data"))
 
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.1")

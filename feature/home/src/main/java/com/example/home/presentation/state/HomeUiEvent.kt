@@ -1,11 +1,11 @@
 package com.example.home.presentation.state
 
-import com.example.home.domain.entity.User
+import com.example.data.User
 
 sealed interface HomeUiEvent {
     data class Loading(val loadingStatus: Boolean) : HomeUiEvent
     data class Success(
-        val data: List<User>? = emptyList()
+        val data: List<com.example.data.User>? = emptyList()
     ) : HomeUiEvent
 
     data class Failure(val message: String?) : HomeUiEvent

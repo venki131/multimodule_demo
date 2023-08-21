@@ -11,10 +11,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.data.User
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun FavouriteScreenContent() {
+fun FavouriteRoute(user: User? = null) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -22,13 +23,17 @@ fun FavouriteScreenContent() {
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Text(text = "Favourites Screen")
-        // Add the rest of your home screen content here
+        user?.let { 
+            Text(text = user.name + "\n" + user.email)
+        } ?: run { 
+            Text(text = "Favourites is Empty")
+        }
     }
 }
 
 @Preview
 @Composable
 fun FavouriteScreenContentPreview() {
-    FavouriteScreenContent()
+    val user = User(1,"James Bond", "jamesbond007@yopmail.com")
+    FavouriteRoute(user)
 }

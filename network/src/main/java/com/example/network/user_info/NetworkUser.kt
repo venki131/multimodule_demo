@@ -1,4 +1,4 @@
-package user_info
+package com.example.network.user_info
 
 data class NetworkUser(
     val id: Int,

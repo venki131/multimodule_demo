@@ -1,6 +1,6 @@
 package com.example.home
 
-import com.example.home.domain.entity.User
+import com.example.data.User
 import com.example.home.domain.repository.UserRepository
 import com.example.home.domain.usecase.GetUserUseCase
 import com.example.home.presentation.state.Resource
@@ -12,7 +12,6 @@ import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.junit.runner.RunWith
 import org.mockito.Mock
-import org.mockito.Mockito.mock
 import org.mockito.Mockito.`when`
 import org.mockito.MockitoAnnotations
 import org.mockito.junit.MockitoJUnit
@@ -51,7 +50,7 @@ class GetUserUseCaseTest {
     @Test
     fun `invoke return Success`() = runTest {
         //Given
-        val mockUsers = listOf(User(1,"James", "jamesbon007@yopmail.com"))
+        val mockUsers = listOf(com.example.data.User(1, "James", "jamesbon007@yopmail.com"))
         `when`(repository.getUsers()).thenReturn(Resource.Success(mockUsers))
 
         //When

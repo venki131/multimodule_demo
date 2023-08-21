@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.example.navigation"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         minSdk = 24
@@ -48,6 +48,7 @@ dependencies {
     implementation(project(":feature:home"))
     implementation(project(":feature:favourites"))
     implementation(project(":feature:settings"))
+    implementation(project(":data"))
 
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
@@ -71,4 +72,8 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+
+    implementation ("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.0")
+
+    implementation ("com.squareup.retrofit2:converter-moshi:2.9.0")
 }
