@@ -1,9 +1,8 @@
 package com.example.home
 
-import com.example.data.User
+import com.example.data.Resource
 import com.example.home.domain.repository.UserRepository
 import com.example.home.domain.usecase.GetUserUseCase
-import com.example.home.presentation.state.Resource
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runTest
 import org.junit.Rule
