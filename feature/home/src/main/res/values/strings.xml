@@ -1,0 +1,4 @@
+<resources>
+    <string name="hello_home_fragment">Hello Home fragment</string>
+    <string name="home2_fragment">Home 2 fragment</string>
+</resources>

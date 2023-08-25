@@ -44,6 +44,7 @@ android {
     }
     buildFeatures {
         compose = true
+        viewBinding = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.4.3"
@@ -59,7 +60,7 @@ android {
 }
 
 val hilt_version = "2.44"
-
+val nav_version = "2.7.1"
 dependencies {
 
     implementation(project(":network"))
@@ -96,6 +97,10 @@ dependencies {
     testImplementation("app.cash.turbine:turbine:0.11.0")
     testImplementation("org.mockito:mockito-inline:4.8.1")
     testImplementation("io.mockk:mockk:1.13.7")
+
+    api("androidx.navigation:navigation-fragment-ktx:$nav_version")
+    api("androidx.navigation:navigation-ui-ktx:$nav_version")
+    api("androidx.navigation:navigation-dynamic-features-fragment:$nav_version")
 }
 
 hilt {

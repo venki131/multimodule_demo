@@ -43,6 +43,11 @@ android {
     }
 }
 
+
+    val nav_version = "2.7.1"
+
+
+
 dependencies {
 
     implementation(project(":feature:home"))
@@ -76,4 +81,8 @@ dependencies {
     implementation ("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.0")
 
     implementation ("com.squareup.retrofit2:converter-moshi:2.9.0")
+
+    api("androidx.navigation:navigation-fragment-ktx:$nav_version")
+    api("androidx.navigation:navigation-ui-ktx:$nav_version")
+    api("androidx.navigation:navigation-dynamic-features-fragment:$nav_version")
 }

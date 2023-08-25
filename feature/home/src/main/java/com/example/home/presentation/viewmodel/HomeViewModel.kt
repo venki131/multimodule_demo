@@ -21,20 +21,20 @@ class HomeViewModel @Inject constructor(
     val uiState: StateFlow<HomeUiEvent?> = _uiState
 
     init {
-        fetchUsers()
+        //fetchUsers()
     }
 
     fun fetchUsers() {
         viewModelScope.launch {
-            _uiState.value = HomeUiEvent.Loading(true) // Emit loading state
+            //_uiState.value = HomeUiEvent.Loading(true) // Emit loading state
 
             val result = getUserUseCase.invoke()
 
-            _uiState.value = when (result) {
+            /*_uiState.value = when (result) {
                 is Resource.Success -> HomeUiEvent.Success(result.data)
                 is Resource.Failure -> HomeUiEvent.Failure(result.message)
                 else -> HomeUiEvent.Loading(false) // Hide loading state if not success or failure
-            }
+            }*/
         }
     }
 }

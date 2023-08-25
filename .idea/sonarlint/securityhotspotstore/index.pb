@@ -9,8 +9,6 @@ i
 9app/src/main/java/com/example/sampleapp/ui/theme/Theme.kt,5/2/52a474e41499b12b47ab10d8e0d995ff3d9eafee
 v
 Fnavigation/src/main/java/com/example/navigation/BottomNavigationBar.kt,d/0/d0398c2f6964c50a961e6c33606b021f92f3215a
-@
-local.properties,0/7/0712df971a99ac4d2fccb8e0fb19f377f3374cca
 X
 (gradle/wrapper/gradle-wrapper.properties,f/b/fbe448ebfc3eb2d4e308f6b8b043666f5b57235e
 A
@@ -21,14 +19,10 @@ M
 navigation/consumer-rules.pro,b/5/b5083a7aeb0138b60439a5990ec65ed48784647b
 l
 <app/src/main/java/com/example/sampleapp/di/RetrofitHelper.kt,d/4/d4c910675150c99b5637eb7580a9bd9cf56a0f00
-P
- app/src/main/AndroidManifest.xml,8/c/8c55c3ccc257e5907959013f99656e4c8ec3903e
 J
 core/ui/proguard-rules.pro,f/d/fd4af137b29863afa7299f629413ea1ef4332351
 v
 Fcore/ui/src/androidTest/java/com/example/ui/ExampleInstrumentedTest.kt,6/0/6044fcc2a915a4e949265edb38508127cceabda4
-T
-$core/ui/src/main/AndroidManifest.xml,2/0/20dc05f8d5447c0dd2396ce7594375ac150a2e12
 e
 5core/ui/src/main/java/com/example/ui/ErrorSnackBar.kt,1/6/164af042973260b1fd9b649cd970ca630a367ebc
 g
